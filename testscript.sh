@@ -6,7 +6,7 @@ wget https://releases.hashicorp.com/terraform/${TERRAFORM_VER}/terraform_${TERRA
 
 sudo apt install unzip -y
 
-unzip terraform_${TERRAFORM_VER}_linux_amd64.zip
+unzip terraform_${TERRAFORM_VER}_linux_amd64.zip -y
 
 sudo mv terraform /usr/local/bin/
 
