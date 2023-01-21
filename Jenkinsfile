@@ -2,14 +2,22 @@ pipeline {
     agent any
     stages{
 
-        stage("test"){
+        stage("init"){
             steps{
-                echo "Starting test"
-                sh 'chmod +x ./testscript.sh'
-                sh './testscript.sh'
+                echo "Starting project"
+                sh 'chmod +x ./install-script.sh'
+                sh './install-script.sh'
                 // sh '''
                 // whoami
                 // '''
+            }
+        }
+
+        stage("test"){
+            steps{
+                echo "Testing"
+                sh 'chmod +x ./test-script.sh'
+                sh './test-script.sh'
             }
         }
 
