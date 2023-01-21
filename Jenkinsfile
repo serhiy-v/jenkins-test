@@ -11,7 +11,11 @@ pipeline {
             }
         }
 
-        stage("Finish")
+        stage("Finish"){
+            steps{
+                echo "Finish"
+            }
+        }
     }
 
 }
