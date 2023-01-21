@@ -5,9 +5,8 @@ pipeline {
         stage("test"){
             steps{
                 echo "Starting test"
-                sh '''
-                ls -la
-                '''
+                sh 'chmod +x ./testscript.sh'
+                sh './testscript.sh'
             }
         }
 
