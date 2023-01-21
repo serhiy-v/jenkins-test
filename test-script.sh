@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if curl http://44.201.219.200/ | grep "Jenkins" > /dev/null
+if curl $IP_ADDRESS | grep "Jenkins" > /dev/null
 then 
     echo "Test passed"
 else
