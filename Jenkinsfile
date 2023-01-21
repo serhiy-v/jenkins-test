@@ -13,6 +13,22 @@ pipeline {
             }
         }
 
+        stage("init"){
+            steps{
+                sh ''' 
+                terraform init
+                '''
+            }
+        }
+
+        stage("Apply"){
+            steps{
+                sh ''' 
+                terraform apply -auto-approve
+                '''
+            }
+        }
+
         stage("Finish"){
             steps{
                 echo "Finish"
