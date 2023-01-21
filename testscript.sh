@@ -7,7 +7,7 @@ sudo apt install apache2 php libapache2-mod-php -y
 
 sudo mkdir -p /var/www/html/
 
-sudo chmod +w /var/www/html/index.html
+sudo chown -R jenkins:jenkins /var/www
 
 ls -la /var/www/html/
 
