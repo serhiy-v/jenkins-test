@@ -2,18 +2,15 @@ pipeline {
     agent any
     stages{
 
-        stage("init"){
+        stage("Deploy"){
             steps{
                 echo "Starting project"
                 sh 'chmod +x ./install-script.sh'
                 sh './install-script.sh'
-                // sh '''
-                // whoami
-                // '''
             }
         }
 
-        stage("test"){
+        stage("Test"){
             steps{
                 echo "Testing"
                 sh 'chmod +x ./test-script.sh'
@@ -21,37 +18,18 @@ pipeline {
             }
         }
 
-        // stage("init"){
-        //     steps{
-        //         sh ''' 
-        //         cd terraform
-        //         terraform init
-        //         '''
-        //     }
-        // }
-
-        // stage("Apply"){
-        //     steps{
-        //         sh ''' 
-        //         cd terraform
-        //         terraform apply -auto-approve
-        //         '''
-        //     }
-        // }
-
         stage("Finish"){
             steps{
                 echo "Finish"
             }
         }
 
-         stage('Stage for test branch') {
+         stage('Stage for Test branch') {
             when {
                 expression { return env.BRANCH_NAME == 'test' }
             }
             steps {
-                echo "This steps only for test stage!"
-                echo "Result: SUCCESS"
+                echo "Stage only for test branch"
             }
         } 
 
