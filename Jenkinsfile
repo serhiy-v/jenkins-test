@@ -44,9 +44,8 @@ pipeline {
                 echo "Finish"
             }
         }
-    }
 
-    stage('Push notification') {
+         stage('Push notification') {
             steps {
                 script{
                     withCredentials([string(credentialsId: 'telegramToken', variable: 'TOKEN'), string(credentialsId: '	telegramChatID', variable: 'CHAT_ID')]) { 
@@ -56,6 +55,7 @@ pipeline {
                     }
                 }
             }
+    }
 
  }
 
